@@ -1,0 +1,501 @@
+<!doctype html>
+<html>
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>DEP News Letter</title>
+    <style type="text/css">
+    body {
+            text-decoration: none;
+            margin: 0;
+            padding: 0;
+            font: 15px/1.4 mon, sans-serif;
+            background: #c7c7c7;
+            font-family: museo-slab, source-han-sans-simplified-c, "Source Sans Pro", arial, helvetica, sans-serif;
+        }
+        
+        body,
+        table,
+        td,
+        a,
+        li,
+        blockquote {
+            -webkit-text-size-adjust: none!important;
+            font-family: mon;
+            font-style: normal;
+            font-weight: 400;
+        }
+        
+        p {
+            margin: 1.4em 0 0;
+            font-family: "Proxima Nova", "Proxima Nova Black", "Proxima Nova Bold", "Proxima Nova Light", "Proxima Nova Medium", "Proxima Nova Thin";
+        }
+        
+        .container {
+            position: relative;
+            z-index: 1;
+            width: 190px;
+            padding: 20px;
+            margin: 20px auto;
+            background: #CCCCCC;
+        }
+        
+        .container h1 {
+            text-decoration: none;
+            position: relative;
+            padding: 10px 30px;
+            margin: 0 -30px 20px;
+            font-size: 28px;
+            font-family: "Proxima Nova", "Proxima Nova Black", "Proxima Nova Bold", "Proxima Nova Light", "Proxima Nova Medium", "Proxima Nova Thin";
+            font-weight: bold;
+            text-align: center;
+            color: #fff;
+            background: #D35D47;
+            zoom: 1;
+        }
+        
+        .container h1:before,
+        .container h1:after {
+            text-decoration: none;
+            content: "";
+            position: absolute;
+            z-index: -1;
+            top: 100%;
+            left: 0;
+            border-width: 0 10px 10px 0;
+            border-style: solid;
+            border-color: transparent #D35D47;
+        }
+        
+        .container h1:after {
+            text-decoration: none;
+            left: auto;
+            right: 0;
+            border-width: 0 0 10px 10px;
+        }
+        
+        button {
+            width: 100%;
+            color: #fff;
+            background: #76cdd8;
+            text-align: middle;
+            padding: 5px;
+            border: none;
+            border-radius: 4px;
+            cursor: pointer;
+        }
+        
+        ul {
+            list-style-type: none;
+            padding: 0;
+            margin: 0;
+            li {
+                a {
+                    padding: 2% 4%;
+                    border: 1px solid green;
+                    text-decoration: none;
+                    display: block;
+                }
+            }
+        }
+        
+        .site-footer {
+            padding: 45px 0 20px;
+            font-size: 15px;
+            line-height: 24px;
+            color: #737373;
+        }
+        
+        .site-footer hr {
+            border-top-color: #bbb;
+            opacity: 0.5
+        }
+        
+        .site-footer hr.small {
+            margin: 20px 0
+        }
+        
+        .site-footer h6 {
+            color: #fff;
+            font-size: 16px;
+            text-transform: uppercase;
+            margin-top: 5px;
+            letter-spacing: 2px
+        }
+        
+        .site-footer a {
+            color: #737373;
+        }
+        
+        .site-footer a:hover {
+            color: #3366cc;
+            text-decoration: none;
+        }
+        
+        .footer-links {
+            padding-left: 0;
+            list-style: none
+        }
+        
+        .footer-links li {
+            display: block
+        }
+        
+        .footer-links a {
+            color: #737373
+        }
+        
+        .footer-links a:active,
+        .footer-links a:focus,
+        .footer-links a:hover {
+            color: #3366cc;
+            text-decoration: none;
+        }
+        
+        .footer-links.inline li {
+            display: inline-block
+        }
+        
+        .site-footer .social-icons a {
+            width: 40px;
+            height: 40px;
+            line-height: 40px;
+            margin-left: 6px;
+            margin-right: 0;
+            border-radius: 100%;
+            background-color: #33353d
+        }
+        
+        .copyright-text {
+            margin: 0
+        }
+        
+        @media (max-width:991px) {
+            .site-footer [class^=col-] {
+                margin-bottom: 30px
+            }
+        }
+        
+        @media (max-width:767px) {
+            .site-footer {
+                padding-bottom: 0
+            }
+            .site-footer .copyright-text,
+            .site-footer .social-icons {
+                text-align: center
+            }
+        }
+        
+        .social-icons {
+            padding-left: 0;
+            margin-bottom: 0;
+            list-style: none
+        }
+        
+        .social-icons li {
+            display: inline-block;
+            margin-bottom: 4px
+        }
+        
+        .social-icons li.title {
+            margin-right: 15px;
+            text-transform: uppercase;
+            color: #96a2b2;
+            font-weight: 700;
+            font-size: 13px
+        }
+        
+        .social-icons a {
+            background-color: #eceeef;
+            color: #818a91;
+            font-size: 16px;
+            display: inline-block;
+            line-height: 44px;
+            width: 44px;
+            height: 44px;
+            text-align: center;
+            margin-right: 8px;
+            border-radius: 100%;
+            -webkit-transition: all .2s linear;
+            -o-transition: all .2s linear;
+            transition: all .2s linear
+        }
+        
+        .social-icons a:active,
+        .social-icons a:focus,
+        .social-icons a:hover {
+            color: #fff;
+            background-color: #29aafe
+        }
+        
+        .social-icons.size-sm a {
+            line-height: 34px;
+            height: 34px;
+            width: 34px;
+            font-size: 14px
+        }
+        
+        .social-icons a.facebook:hover {
+            background-color: #3b5998
+        }
+        
+        .social-icons a.twitter:hover {
+            background-color: #00aced
+        }
+        
+        .social-icons a.linkedin:hover {
+            background-color: #007bb6
+        }
+        
+        .social-icons a.dribbble:hover {
+            background-color: #ea4c89
+        }
+        
+        @media (max-width:767px) {
+            .social-icons li.title {
+                display: block;
+                margin-right: 0;
+                font-weight: 600
+            }
+        }
+        
+        @media screen and (max-width:600px) {
+            body,
+            table,
+            td,
+            p,
+            a,
+            li,
+            blockquote {
+                -webkit-text-size-adjust: none!important;
+                font-family: sans-serif;
+            }
+            table {
+                border-radius: 25px;
+                padding: 20px;
+                width: 100%;
+            }
+        }
+        
+        .footer {
+            height: auto !important;
+            max-width: 48% !important;
+            width: 48% !important;
+        }
+        
+        table.responsiveImage {
+            height: auto !important;
+            max-width: 30% !important;
+            width: 30% !important;
+        }
+        
+        table.responsiveContent {
+            height: auto !important;
+            max-width: 66% !important;
+            width: 66% !important;
+        }
+        
+        .top {
+            height: auto !important;
+            max-width: 48% !important;
+            width: 48% !important;
+        }
+        
+        .catalog {
+            margin-left: 0%!important;
+        }
+    }
+    @media screen and (max-width:480px) {
+        body,
+        table,
+        td,
+        p,
+        a,
+        li,
+        blockquote {
+            -webkit-text-size-adjust: none!important;
+            font-family: sans-serif;
+        }
+        
+        table {
+            width: 100% !important;
+            border-style: none !important;
+            border-radius: 15px 50px 30px 5px;
+            background: #ffffff;
+            padding: 20px;
+            width: 200px;
+            height: 150px;
+        }
+        
+        .footer {
+            height: auto !important;
+            max-width: 96% !important;
+            width: 96% !important;
+        }
+        
+        .table.responsiveImage {
+            border-radius: 15px 50px 30px 5px;
+            background: #ffffff;
+            padding: 20px;
+            width: 200px;
+            height: 150px;
+        }
+        
+        .table.responsiveContent {
+            border-radius: 15px 50px 30px 5px;
+            background: #ffffff;
+            padding: 20px;
+            width: 200px;
+            height: 150px;
+        }
+        
+        .top {
+            /* Header columns occupying full width */
+            height: auto !important;
+            max-width: 100% !important;
+            width: 100% !important;
+        }
+        
+        .catalog {
+            margin-left: 0%!important;
+        }
+    }
+    </style>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+</head>
+
+<body yahoo="yahoo">
+    <table width="100%" cellspacing="0" cellpadding="0">
+        <tbody>
+            <tr>
+                <td>
+                    <table width="800" align="center" cellpadding="0" cellspacing="0">
+                        <!-- Main Wrapper Table with initial width set to 60opx -->
+                        <tbody>
+
+                            <!-- HTML Spacer row -->
+                            <table align="center" width="600" class="email-container">
+                                <!-- Could put logo here //<tr>
+                //<td style="padding: 0px 0; text-align: center"><img src="http://sites.bxmc.poly.edu/~anniebrinich/contactus@3x.png" width="150" height="75" alt="alt_text" border="0"> <br> <br> <br>
+				//</td> &nbsp;
+			//</tr>
+			 -->
+
+                                <table cellspacing="0" cellpadding="0" border="0" align="center" bgcolor="#EFEFF7" width="900" class="email-container">
+
+                                    <!-- Hero Image, Flush : BEGIN -->
+                                    <tr>
+                                        <td align="middle" style="text-align: center; padding: 15px 20px; font-family: 'Proxima Nova', 'Proxima Nova Black', 'Proxima Nova Bold', 'Proxima Nova Light', 'Proxima Nova Medium', 'Proxima Nova Thin'; font-size: 18px; line-height: 2px; color: #FFFFFF; background: #464547">
+                                            <h1> DEP Newsletter</h1>
+                                        </td>
+                                    </tr>
+                                    <!-- Lots of columns!! -->
+                                    <tr>
+                                        <td align="center" valign="top" style="padding: 20px">
+                                            <table cellspacing="0" cellpadding="0" border="0" width="100%">
+                                                <tr>
+                                                    <td width="25%" class="stack-column-center">
+                                                        <table cellspacing="0" cellpadding="0" border="0">
+                                                            <div class="container">
+                                                                <a href="#"></a>
+                                                                <h1>What's New <span><i class="fa fa-bullhorn" aria-hidden="true" style="color: #fff"></i></span></h1>
+
+                                                                <h3>Angular/React</h3>
+                                                                <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Curabitur adipiscing arcu vitae lacus porta ac pellentesque massa lobortis. In arcu tortor, sagittis ac laoreet sit amet, euismod
+                                                                    a odio. </p>
+
+                                                                <h3>EPAM Projects</h3>
+                                                                <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Curabitur adipiscing arcu vitae lacus porta ac pellentesque massa lobortis. In arcu tortor, sagittis ac laoreet sit amet, euismod
+                                                                    a odio. </p>
+                                                                <button>More Info</button>
+                                                            </div>
+                                                        </table>
+                                                    </td>
+                                                    <td width="25%" class="stack-column-center">
+                                                        <table cellspacing="0" cellpadding="0" border="0">
+                                                            <div class="container">
+                                                                <a href="#"></a>
+                                                                <h1>Events <span><i class="fa fa-calendar" aria-hidden="true" style="color: #fff"></i></span></h1>
+
+                                                                <h3>Upcoming</h3>
+                                                                <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Curabitur adipiscing arcu vitae lacus porta ac pellentesque massa lobortis. In arcu tortor, sagittis ac laoreet sit amet, euismod
+                                                                    a odio. </p>
+
+                                                                <h3>Planned</h3>
+                                                                <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Curabitur adipiscing arcu vitae lacus porta ac pellentesque massa lobortis. In arcu tortor, sagittis ac laoreet sit amet, euismod
+                                                                    a odio. </p>
+                                                                <button>More Info</button>
+                                                            </div>
+                                                        </table>
+                                                    </td>
+                                                    <td width="25%" class="stack-column-center">
+                                                        <table cellspacing="0" cellpadding="0" border="0">
+                                                            <div class="container">
+                                                                <a href="#"></a>
+                                                                <h1> Positions <span><i class="fa fa-briefcase" aria-hidden="true" style="color: #fff"></i></span></h1>
+
+                                                                <h3>Mean Stack</h3>
+                                                                <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Curabitur adipiscing arcu vitae lacus porta ac pellentesque massa lobortis. In arcu tortor, sagittis ac laoreet sit amet, euismod
+                                                                    a odio. </p>
+
+                                                                <h3>Ux/UI</h3>
+                                                                <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Curabitur adipiscing arcu vitae lacus porta ac pellentesque massa lobortis. In arcu tortor, sagittis ac laoreet sit amet, euismod
+                                                                    a odio. </p>
+
+                                                                <div>
+                                                                    <button>More Info</button>
+                                                                </div>
+                                                            </div>
+                                                        </table>
+                                                    </td>
+                                                </tr>
+                                            </table>
+                                        </td>
+                                    </tr>
+
+                                    <!-- Background Image with Text : BEGIN -->
+                                    <tr>
+                                        <td background="images/Image_600x230.png" bgcolor="#222222" valign="middle" style="text-align: center; background-position: center center !important; background-size: cover !important;">
+                                            <!--[if gte mso 9]>
+                    <v:rect xmlns:v="urn:schemas-microsoft-com:vml" fill="true" stroke="false" style="width:600px;height:175px; background-position: center center !important;">
+                    <v:fill type="tile" src="assets/Responsive/Image_600x230.png" color="#222222" />
+                    <v:textbox inset="0,0,0,0">
+                    <![endif]-->
+
+                                            <div>
+                                                <table align="center" border="0" cellpadding="0" cellspacing="0" width="100%">
+
+                                                    <tr bgcolor="#d0cfcf ">
+                                                        <td>
+                                                            <table class="footer " align="left " cellpadding="0 " cellspacing="0 ">
+                                                                <!-- First column of footer content -->
+                                                                <table align="center " width="100%" class="email-container ">
+                                                                    <tr>
+                                                                        <td style="padding: 10px; width: 100%;font-size: 12px; font-family: 'Proxima Nova', 'Proxima Nova Black', 'Proxima Nova Bold', 'Proxima Nova Light', 'Proxima Nova Medium',
+                                                            'Proxima Nova Thin'; line-height:18px; text-align: center; color: #652d90; ">
+                                                                            <div class="site-footer ">
+                                                                                <p class="copyright-text ">Copyright &copy; 2019 All Rights Reserved by
+                                                                                    <a href="# ">EPAM Systems</a>.
+                                                                                </p>
+                                                                                <ul class="social-icons ">
+                                                                                    <li><a class="facebook " href="# "><i class="fa fa-facebook "></i></a></li>
+                                                                                    <li><a class="twitter " href="# "><i class="fa fa-twitter "></i></a></li>
+                                                                                    <li><a class="linkedin " href="# "><i class="fa fa-linkedin "></i></a></li>
+                                                                                </ul>
+                                                                            </div>
+
+
+
+
+                                                                        </td>
+                                                                    </tr>
+                                                                </table>
+                                                        </td>
+                                                    </tr>
+                                                    </table>
+                        </tbody>
+                        </table>
+</body>
+
+</html>
